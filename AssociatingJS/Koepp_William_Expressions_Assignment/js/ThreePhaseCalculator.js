@@ -1,35 +1,37 @@
 /**
  * Created by williamkoepp on 4/13/15.
  */
+// Expressions Assignment for Week two
 /*------------------------------------------------------------------------------------------*/
 //Initializing stage
 var watts = 0;              /*this is three phase watts , which is Voltage Average * Amperage Average * Power Factor * 1.732
                             this is if a power factor is available. For rough estimates Voltage multiplied by Amperage will work.*/
-var wattPhrase = "Please enter the measured motor wattage:";
-var volts = 0;
-var current = 0;
-var Pf = 0;
+var wattPhrase = "Please enter the measured motor wattage:"; // string for use within the program
+var volts = 0;              //storage for volts variable
+var current = 0;            //storage for amperage variable
+var Pf = 0;                 //storage for Power Factor variable
 var rms = 1.732;            //this is the root mean square value, half of Pi to represent half of a sinusoidal wave.
 var Hp = 0;                 /* Hp is short for Horsepower. A standard measurement for foot pounds per second,
                             however this is in reference to electrical means, so 746 watts is 1 horsepower. */
-var efficiency = 0;
-var phrases = ["please enter the measured circuit voltage","Please enter the measured circuit current"];
+var efficiency = 0;         //storage for efficiency variable
+var phrases = ["please enter the measured circuit voltage","Please enter the measured circuit current"]; //array so as to easy select which string to use
 /*------------------------------------------------------------------------------------------*/
 //Input stage
-alert ("Please enter all three values for Wattage, Voltage, and Amperage.");
-watts = prompt (wattPhrase);
-volts = prompt (phrases[0]);
-current = prompt (phrases[1]);
+alert ("Please enter all three values for Wattage, Voltage, and Amperage."); // instructions on what variables are needed
+watts = prompt (wattPhrase);    //question posing for the wattage input
+volts = prompt (phrases[0]);    //question posing for the voltage input
+current = prompt (phrases[1]);  //question posing for the current input
 /*------------------------------------------------------------------------------------------*/
 //Formula & calculation stage
-Pf = (watts / (volts * current * rms)) * 100;  /*formula for three phase power factor of AC motors.
+Pf = (watts / (volts * current * rms));  /*formula for three phase power factor of AC motors.
                                                 answered in a percentage */
-Hp = watts / 746;
+Pf *= 100;                      // conversion from decimal into a percentage
+Hp = watts / 746;               //simple formula for determining the Horsepower
 efficiency = ((Hp * 746) / (volts * current * Pf* rms)) * 100; //formula for 3 phase power efficiency.
 /*------------------------------------------------------------------------------------------*/
 //Output stage
 alert ("Your efficiency is :" + efficiency +  "\n Your motor Horsepower is:" + Hp + " \n Your motor power factor is :" + Pf + "%");
-
+// A print of the solved equations from the previous (calculations) stage
 /*-------------------------------------------------------------------------------------------
 testing stage
 Test 1
