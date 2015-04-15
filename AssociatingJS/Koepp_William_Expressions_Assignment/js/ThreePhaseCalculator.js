@@ -61,6 +61,9 @@ Test 2
 
  these values are fictional and if to say the motor was at 460 Volt, the amperage could not exceed 5.25 Amp to have the
  efficiency specified of .895
+ discovered issues with program as seen by the results, are that these perfect conditions which leads to the efficiency of 1
+ which can be seen as 100%. granted energy can not be created nor destroyed this is not the scope of that,
+ but to check the input power versus that of output power. All real applications will have heat losses from friction etc etc.
  */
 
 
