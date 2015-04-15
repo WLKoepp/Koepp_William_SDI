@@ -5,6 +5,7 @@
 //Initializing stage
 var watts = 0;              /*this is three phase watts , which is Voltage Average * Amperage Average * Power Factor * 1.732
                             this is if a power factor is available. For rough estimates Voltage multiplied by Amperage will work.*/
+var wattPhrase = "Please enter the measured motor wattage:";
 var volts = 0;
 var current = 0;
 var Pf = 0;
@@ -12,12 +13,13 @@ var rms = 1.732;            //this is the root mean square value, half of Pi to 
 var Hp = 0;                 /* Hp is short for Horsepower. A standard measurement for foot pounds per second,
                             however this is in reference to electrical means, so 746 watts is 1 horsepower. */
 var efficiency = 0;
+var phrases = ["please enter the measured circuit voltage","Please enter the measured circuit current"];
 /*------------------------------------------------------------------------------------------*/
 //Input stage
 alert ("Please enter all three values for Wattage, Voltage, and Amperage.");
-watts = prompt ("Please enter the measured motor wattage:");
-volts = prompt ("please enter the measured circuit voltage");
-current = prompt ("Please enter the measured circuit current");
+watts = prompt (wattPhrase);
+volts = prompt (phrases[0]);
+current = prompt (phrases[1]);
 /*------------------------------------------------------------------------------------------*/
 //Formula & calculation stage
 Pf = (watts / (volts * current * rms)) * 100;  /*formula for three phase power factor of AC motors.
