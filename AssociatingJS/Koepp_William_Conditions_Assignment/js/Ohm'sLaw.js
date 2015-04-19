@@ -8,16 +8,16 @@ var ohm = 0;                                                        //initializi
 var amp = 0;                                                        //initializing amperage variable
 var watt = 0;                                                       //initializing wattage variable
 var hp = 0;                                                         //initializing Horsepower variable
-var error = "There must be 2 known values!!!";
-
-alert("Please enter 2 of the three ohms law values. \nValues must be numbers only without Engineering notation.")
+//==================================================================================================================
+alert("Please enter 2 of the three ohms law values. \nValues must be numbers only without Engineering notation.");
 volt = prompt(inputMess[0]);                    //input for the volts value
 ohm = prompt(inputMess[1]);                     //input for the ohms value
 amp = prompt(inputMess[2]);                     //input for the amps value
-console.log(volt);                              //for debugging, input values will appear in console
-console.log(ohm);                               //for debugging, input values will appear in console
-console.log(amp);                               //for debugging, input values will appear in console
-
+//console.log(volt);                              //for debugging, input values will appear in console
+//console.log(ohm);                               //for debugging, input values will appear in console
+//console.log(amp);                               //for debugging, input values will appear in console
+var error = (volt > 0 && ohm > 0 && amp > 0)? "You input 3 values, please try again and input only two":"You input less than 2 values, please try again and input at least two";
+//==================================================================================================================
 if (volt == 0 && ohm > 0 && amp > 0 ){          //checks for proper input
     volt = ohm * amp;                           //ohms law for volts
     watt = volt * amp;                          //formula for wattage
@@ -32,10 +32,17 @@ if (volt == 0 && ohm > 0 && amp > 0 ){          //checks for proper input
     hp = watt / 746;                            //formula for horsepower(simple)
 }else{
     alert (error);                              /*if none of the proper conditions are met then an error message...
-     is displayed, which is followed by the solution alert so the user may see which value he/she may need. */
+     is displayed */
+    //console.log("Error value:" + error);        //for debugging, string value will appear in console
 }
+//==================================================================================================================
+if (watt == 0){                                 //this comparison will end the program if proper values are not put in.
+
+}else {
 // solution alert below, displays all of the calculated values from the inputs.
-alert ("Voltage:" + volt + "\nOhms:" + ohm + "\nAmperage:"+ amp + "\nWattage:" + watt + "\nHorsepower:" + hp);
+    alert("Voltage:" + volt + "\nOhms:" + ohm + "\nAmperage:" + amp + "\nWattage:" + watt + "\nHorsepower:" + hp);
+}
+//==================================================================================================================
 
 // test number 1
 /* voltage 208, ohm 0(unknown), amperage 15
