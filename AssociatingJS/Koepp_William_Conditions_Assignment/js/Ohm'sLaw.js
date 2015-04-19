@@ -69,3 +69,4 @@ if (watt == 0){                                 //this comparison will end the p
 it will be left alone to prevent bad calculations from impossible values i.e. 12 volts, 12 ohms, 15 000 amps
  This would lead to a physically impossible solution.
  */
+ //tests above where done before adding the ternary condition, so for the "error" messages might be different now.
