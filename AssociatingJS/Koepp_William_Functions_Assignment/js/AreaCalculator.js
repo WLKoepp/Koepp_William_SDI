@@ -27,7 +27,8 @@ var piCirc = 3.142; // This is the value for Pi rounded up since it is an infini
 Javascript variables do not need to be claimed till their actual usage.
  */
 //=====================================================================================================================
-document.write("Thank you for using my Program \n Created by William Koepp");
+document.write("Thank you for using my Program!" + "<br/>");
+document.write("Created by: William Koepp");
 
 do {        //This loop is to keep the program running with out having to refresh the page each time.
             //The below line is your input for selecting which area calculation you want to go with.
